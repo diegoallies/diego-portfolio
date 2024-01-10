@@ -24,8 +24,8 @@ const routes = [
     component: Contact
   },
   {
-    path: '/skill',
-    name: 'Skill',
+    path: '/skills',
+    name: 'Skills',
     component: Skills
   },
   {

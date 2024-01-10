@@ -1,120 +1,80 @@
 <template>
-    <div class="skill-container">
-        <div class="row">
-            <div class="col-12 col-md-6 left-col">
-                <router-link to="/" class="btn back-btn"><i class="fas fa-angle-left"></i> Back to Home</router-link>
-                <img src="https://i.postimg.cc/c4Y3sc1q/D85-ADA04-101-D-40-F4-9521-EFE0957-CFCAE.jpg" alt="Diego Allies" class="hero-image">
-            </div>
-            <div class="col-12 col-md-6 right-col">
-                <h1 class="skills-title">Skills</h1>
-                <div class="skill-entry" v-for="skill in skills" :key="skill.name">
-                    <div class="skill-name">{{ skill.name }}</div>
-                    <div class="progress">
-                        <div class="progress-bar" :style="{width: skill.level}"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="skills-page">
+      <!-- Cover Image with Return Button -->
+      <div class="cover-container">
+        <router-link to="/" class="btn back-btn">
+          <i class="fas fa-angle-left"></i>
+          <span>Return</span>
+        </router-link>
+      </div>
+  
+      <!-- Skills Section -->
+      <div class="skills-grid">
+        <!-- Each SkillBar component represents a skill with a labelled bar to the set percentage -->
+        <skill-bar label="JavaScript" icon="fab fa-js-square" percentage="90"></skill-bar>
+        <skill-bar label="Vue.js" icon="fab fa-vuejs" percentage="80"></skill-bar>
+        <skill-bar label="Angular" icon="fab fa-angular" percentage="75"></skill-bar>
+        <skill-bar label="SASS" icon="fab fa-sass" percentage="70"></skill-bar>
+        <skill-bar label="Node.js" icon="fab fa-node-js" percentage="85"></skill-bar>
+        <skill-bar label="HTML 5" icon="fab fa-html5" percentage="90"></skill-bar>
+        <skill-bar label="CSS 3" icon="fab fa-css3-alt" percentage="90"></skill-bar>
+        <!-- Add other skill bars here -->
+        <!-- ... -->
+      </div>
     </div>
-    <Footer />
-    </template>
-    
-    <script>
-    import Footer from '@/components/Footer.vue';
-    
-    export default {
-        components: {
-            Footer
-        },
-        data() {
-            return {
-                skills: [
-                    { name: 'JavaScript', level: '85%' },
-                    { name: 'Vue.js', level: '90%' },
-                    { name: 'Angular', level: '75%' },
-                    { name: 'Next.js', level: '80%' },
-                    { name: 'Node.js', level: '80%' },
-                    { name: 'MongoDB', level: '80%' },
-                    { name: 'Firebase', level: '70%' },
-                    { name: 'HTML', level: '95%' },
-                    { name: 'CSS/SASS', level: '95%' },
-                    { name: 'MySQL', level: '85%' },
-                    // Add more skills as needed here
-                ]
-            };
-        }
-    };
-    </script>
-    
-    <style scoped>
-    .skill-container {
-        display: flex;
-        min-height: 100vh;
-        background-color: #eff3f6;
+  </template>
+  
+  <script>
+  import SkillBar from '@/components/SkillBar.vue';
+  
+  export default {
+    name: 'Skills',
+    components: {
+      SkillBar
     }
-    
-    .left-col {
-        padding: 20px;
-    }
-    
-    .hero-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: 20px;
-    }
-    
-    .right-col {
-        background: #363636;
-        color: #fff;
-        padding: 40px;
-    }
-    
-    .skills-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-    
-    .skill-entry {
-        margin-bottom: 20px;
-    }
-    
-    .skill-name {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-    
-    .progress {
-        background: #ccc;
-        border-radius: 2px;
-    }
-    
-    .progress-bar {
-        height: 10px;
-        border-radius: 2px;
-        background: #4caf50;
-        transition: width 0.6s ease;
-    }
-    
-    .btn.back-btn {
-        margin-bottom: 30px;
-        color: #fff;
-        background-color: transparent;
-        border: 1px solid #fff;
-    }
-    
-    @media (max-width: 767px) {
-        .skill-container {
-            flex-direction: column;
-        }
-    
-        .right-col {
-            padding: 20px;
-        }
-    
-        .skills-title {
-            font-size: 1.5rem;
-        }
-    }
-    </style>
+  };
+  </script>
+  
+  <style scoped>
+  .skills-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 200px; /* Adjust for footer */
+    height: 100vh; /* Adjust the height of this component to prevent scrolling */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .cover-container {
+    background-color: #6c7a89;
+    height: 200px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .btn.back-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #4c566a;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 80%;
+    padding-top: 1rem;
+  }
+  
+  /* Style for .cover-container, .btn.back-btn, as well as additional global styles are unchanged */
+  
+  </style>

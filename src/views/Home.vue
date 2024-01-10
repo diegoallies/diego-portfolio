@@ -30,7 +30,7 @@
       <div class="navigation">
         <router-link to="/about" class="btn btn-custom">About</router-link>
         <router-link to="/skills" class="btn btn-custom">Skills</router-link>
-        <router-link to="/projects" class="btn btn-custom">Projects</router-link>
+        <!-- <router-link to="/projects" class="btn btn-custom">Projects</router-link> -->
         <router-link to="/contact" class="btn btn-custom">Contact</router-link>
       </div>
       <div class="social-links">
