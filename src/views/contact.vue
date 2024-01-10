@@ -1,38 +1,35 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm w3-animate-left">
-        <router-link to="/" class="btn btn-rabbit back-btn"><i class="fas fa-angle-left"></i><span class="back2home">Back to Home</span></router-link>
-        <img src="https://i.postimg.cc/8zq0BbVB/contact.jpg" alt="me" class="contact-image">
-      </div>
-      <div class="col-sm w3-animate-right">
-        <div class="row">
-          <div class="col">
-            <h1 class="contact-title">Contact</h1>
-            <p class="contact-tagline">Based in Cape Town, RSA. Drop me a line here:</p>
-          </div>
+  <div class="contact-page">
+    <!-- Return Button -->
+    <div class="cover-container">
+      <router-link to="/" class="btn back-btn">
+        <i class="fas fa-angle-left"></i>
+        <span>Return</span>
+      </router-link>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-content">
+      <h1 class="contact-title">Contact</h1>
+      <p class="contact-tagline">Based in Cape Town, RSA. Drop me a line here:</p>
+      
+      <form class="contact-form" action="https://formspree.io/f/xnqwyraz" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputName" placeholder="Name" name="Name" v-model="name">
         </div>
-        <form class="contact-form" action="https://formspree.io/f/xnqwyraz" method="POST">
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputName" placeholder="Name" name="Name" v-model="name">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="_replyto" v-model="email">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="5" placeholder="Message" name="Message" v-model="message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-rabbit submit">Send Message</button>
-        </form>
-      </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="_replyto" v-model="email">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Message" name="Message" v-model="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom submit">Send Message</button>
+      </form>
     </div>
   </div>
-  <Footer />
 </template>
 
 <script>
-import Footer from '@/components/Footer.vue'
-
 export default {
   data() {
     return {
@@ -41,87 +38,95 @@ export default {
       message: '',
     }
   },
-  components: {
-    Footer
-  }
-}
+};
 </script>
 
 <style scoped>
-.container {
-  background-color: #121212; /* Dark theme background */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
   color: #ffffff;
+  text-align: center;
+  padding: 0;
+  height: 90vh;
+  min-height: calc(100vh - 200px); /* Account for 200px footer */
+  padding-bottom: 200px; /* Footer space */
 }
 
-.contact-image {
+.cover-container {
+  background-color: #6c7a89;
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin: 2rem auto;
-  display: block;
+  padding-top: 70px;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.btn.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #4c566a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.contact-content {
+  width: 80%;
+  max-width: 600px;
 }
 
 .contact-title {
   font-size: 2.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  color: #6c7a89;
+  margin-bottom: 1rem;
 }
 
 .contact-tagline {
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-family: "Crimson", serif;
-  padding-right: 2rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
 .contact-form {
-  padding: 2rem;
+  text-align: left;
 }
 
-.btn.btn-rabbit {
-  background-color: #fff;
-  color: #121212;
-  border: 1px solid #fff;
-  transition: all 0.4s ease-in-out;
-  font-family: "Crimson", serif;
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
-.btn.btn-rabbit:hover {
-  background-color: #3b3b3b;
-  color: #fff;
-}
-
-.form-control {
-  background-color: transparent;
-  color: #fff;
-  border-color: #fff;
+.form-group {
   margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 768px) {
-  /* Adjustments for mobile responsiveness */
-  .contact-title,
-  .contact-tagline {
-    text-align: center;
-  }
+.form-control {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-  .contact-form {
-    padding: 1rem;
-  }
+.btn.btn-custom {
+  background-color: #6c7a89;
+  color: #121212;
+  margin: 10px;
+  padding: 10px 20px;
+}
 
-  .btn.btn-rabbit {
-    width: 100%;
-    margin-top: 0;
-  }
+.submit {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
 
-  .contact-image {
-    margin: 1rem auto;
-  }
+.submit:hover {
+  background-color: #4c566a;
+  color: #ffffff;
 }
 </style>
