@@ -2,7 +2,7 @@
   <div class="home" id="index">
     <!-- Cover Image Container -->
     <div class="cover-container">
-      <img src="https://media.licdn.com/dms/image/D5616AQHiwSdHXe9xfQ/profile-displaybackgroundimage-shrink_350_1400/0/1695365316064?e=1710374400&v=beta&t=lCyaBIbzRrJff_WqBRAcUs3gQvWSJDJ_Y7qoS2jWXNg" alt="Cover" class="cover-image">
+      <!-- <img src="https://media.licdn.com/dms/image/D5616AQHiwSdHXe9xfQ/profile-displaybackgroundimage-shrink_350_1400/0/1695365316064?e=1710374400&v=beta&t=lCyaBIbzRrJff_WqBRAcUs3gQvWSJDJ_Y7qoS2jWXNg" alt="Cover" class="cover-image"> -->
       <!-- Profile Image Container -->
       <div class="profile-container">
         <img src="https://i.postimg.cc/rsJjxhBL/diego.jpg" alt="Diego Allies" class="profile-image">
@@ -10,13 +10,13 @@
     </div>
     <!-- Content Container -->
     <div class="contentContainer">
-      <h1 class="headline">I am Diego Allies</h1>
-      <p class="intro">I am a Junior Web developer able to build a Web presence from the ground up - from concept, navigation, layout and programming to UX and SEO...</p>
+      <h1 class="headline">Diego Allies - Software Engineer</h1>
+      <p class="intro">Crafting robust solutions with a blend of modern technologies and a passion for continuous learning in software engineering.</p>
       <div class="navigation">
-        <router-link to="/about" class="nav-btn">About</router-link>
-        <router-link to="/skills" class="nav-btn">Skills</router-link>
-        <router-link to="/projects" class="nav-btn">Projects</router-link>
-        <router-link to="/contact" class="nav-btn">Contact</router-link>
+        <router-link to="/about" class="btn btn-custom">About</router-link>
+        <router-link to="/skills" class="btn btn-custom">Skills</router-link>
+        <router-link to="/projects" class="btn btn-custom">Projects</router-link>
+        <router-link to="/contact" class="btn btn-custom">Contact</router-link>
       </div>
       <div class="social-links">
         <a href="mailto:diegoallies27@gmail.com" class="social-icon"><i class="fab fa-google"></i></a>
@@ -25,18 +25,12 @@
         <a href="https://wa.me/2779354808" class="social-icon"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-    
   </div>
 </template>
 
 <script>
-import Footer from '@/components/Footer.vue';
-
 export default {
-  name: 'Home',
-  components: {
-    Footer
-  }
+  name: 'Home'
 };
 </script>
 
@@ -48,14 +42,16 @@ export default {
   background-color: #121212;
   color: #ffffff;
   text-align: center;
-  padding-bottom: 3rem; /* space for the footer */
+  padding: 0;
+  margin: 0;
 }
 
 .cover-container {
   position: relative;
   width: 100%;
-  height: 200px; /* Set the height for your cover image */
-  background-color: #6c7a89; /* placeholder in case image fails to load */
+  height: 200px;
+  background-color: #6c7a89;
+  margin-bottom: 60px;
 }
 
 .cover-image {
@@ -76,7 +72,6 @@ export default {
 }
 
 .profile-image {
-  display: block;
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -84,41 +79,38 @@ export default {
 }
 
 .headline {
-  margin: 100px 0 20px; /* Adjust space for profile image */
+  margin-top: 90px;
   font-size: 2.5rem;
 }
 
-.intro, .navigation {
-  margin-bottom: 1rem;
+.intro {
+  font-size: 1.25rem;
+  margin: 20px 0;
 }
 
-.nav-btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  color: #ffffff;
-  background-color: #007bff; /* Bootstrap primary blue */
-  text-decoration: none;
-  border: none;
-  border-radius: 2px;
-  font-size: 1rem;
-  transition: all 0.2s ease-in-out;
+.navigation {
+  margin-bottom: 20px;
 }
 
-.nav-btn:hover {
-  background-color: #0056b3; /* Darken on hover */
+.btn.btn-custom {
+  background-color: #6c7a89;
+  color: #121212;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.social-links {
+  margin-bottom: 50px;
 }
 
 .social-icon {
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
   color: #ffffff;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  font-size: 1.5rem;
+  margin: 0 10px;
 }
 
 .social-icon:hover {
-  opacity: 0.8;
+  color: #bbbbbb;
 }
 
 @media (max-width: 600px) {
@@ -126,7 +118,7 @@ export default {
     font-size: 2rem;
   }
   .profile-container {
-    bottom: -50px; /* Adjust profile position for smaller screens */
+    bottom: -50px;
   }
   .profile-image {
     width: 100px;

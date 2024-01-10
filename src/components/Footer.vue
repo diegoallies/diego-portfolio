@@ -17,7 +17,7 @@ export default {
   padding: 1rem;
   text-align: center;
   background: #6c7a89; /* Matched the cover image background */
-  color: #fff;
+  color: #000000;
 }
 
 .footer-text {
