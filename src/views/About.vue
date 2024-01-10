@@ -1,192 +1,217 @@
 <template>
-
-   
-<div class="container">
-  <div class="row">
-
-    <div class="col-sm w3-animate-left">
-       <router-link to="/" class="btn btn-rabbit back-btn mnn mbv"><i class="fas fa-angle-left bbn">  </i>   <span class="back2home">Back to Home</span> </router-link>
-      <img src="https://i.postimg.cc/hjBt49rF/meee.jpg" alt="me" class="abt-image">
+  <div class="about-page">
+    <!-- Cover Image with Back Button -->
+    <div class="cover-container">
+      <div class="cover-image">
+        <router-link to="/" class="btn back-btn">
+          <i class="fas fa-angle-left"></i>
+          <span>Return</span>
+        </router-link>
+      </div>
     </div>
 
-    <div class="col-sm w3-animate-right">
+    <!-- Bio, Work Experience, and Contact Section -->
+    <div class="main-content">
+      <!-- Work Experience Section -->
+      <div class="timeline-section">
+        <h4>Work Experience</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p>Software Developer at Arealytics SA</p>
+            <p>21 Feb 2023 - Present</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p>Frontend Software Developer at Cimso BS</p>
+            <p>12 July 2022 - 30 October 2022</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p>Fullstack Website Developer at LC Studios</p>
+            <p>11 April 2022 - 12 July 2022</p>
+          </div>
+        </div>
+      </div>
 
-       <div class="container">
+      
 
-  <div class="row">
-    <div class="col">
-      <router-link to="/" class="btn btn-rabbit back-btn mnn cvvv"><i class="fas fa-angle-left bbn">  </i>   <span class="back2home">Back to Home</span> </router-link>
+      <!-- Bio and Profile Section -->
+      <div class="profile-bio-section">
+        <h2>DIEGO ALLIES</h2>
+        <h3>SOFTWARE ENGINEER</h3>
+        <div class="biography">
+          <p>As a Software Engineer with two years' experience, I bring a full-stack perspective to web development. My skill set spans SQL databases, API integration, and crafting responsive interfaces across various JavaScript frameworks. With strong foundations in coding, I'm well-prepared to contribute to your projects.</p>
+        </div>
+      </div>
+
+      <!-- Separator Line -->
+      <div class="separator"></div>
+      <div class="separator2"></div>
+
+      <!-- Contact Information Section -->
+      <div class="contact-information">
+        <h4>Contact</h4>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <p class="contact-text">0679354808</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p class="contact-text">diegoallies27@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-home contact-icon"></i>
+          <p class="contact-text">Cape Town , South Africa</p>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col">
-     
-      <h1 class="abttt">About</h1>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-     
-      <h1 class="subt txttt">Hi, I am Diego Allies. Fullstack Web developer.</h1>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-     
-      <p class="main-txt txttt end">"I am a fast learner who works well in a team as well as being capable of working individually. I thrive in an environment where I am able to take initiative and use my problem-solving skills. Furthermore, I aspire to be a Full-Stack Developer. <br><br> My passion for programming came from my level of skill in it. I have naturally always solved problems that are coding related and found that I have a good understanding of how it all works. This has motivated me to study further and continue in this field." </p>
-    </div>
-  </div>
-
-</div>
-
-    </div>
-  
-  </div>
-</div>
-
-   
-
-
-  <Footer />
-
 </template>
 
 <script>
-
-import * as mdb from 'mdb-ui-kit';
-import {input} from 'mdb-ui-kit';
-import Footer from '@/components/Footer.vue'
-
-
 export default {
-  components: {
-    Footer
-  }
-  
-}
+  name: 'About',
+};
 </script>
 
 <style scoped>
-
-@import '~mdb-ui-kit/css/mdb.min.css';
-.abt-image {
-  width: 85%;
-  height: 102.2%;
-  margin-left: -0.9%;
+.about-page {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 200px; /* Space for footer */
 }
 
-.entireFooter {
-  margin-top: 1.3%;
+.cover-container {
+  position: relative;
 }
 
-.back-btn {
-  margin-left: -70%;
-  margin-top: 15%;
+.cover-image {
+  background-image: url('https://i.postimg.cc/kGg1JcPj/coverimg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  margin-bottom: 50px;
 }
 
-.mnn {
-    background-color: #fff;
-    color: #111;
-    font-style: italic;
-    border: 1px solid #111;
-    border-radius: 0px !important;
-    transition: all 0.4s ease-in-out;
-    margin-bottom: 20px;
-    font-family: "Crimson";
-    font-size: 13px;
+.btn.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(76, 86, 106, 0.7);
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.main-txt {
-  margin-top: 5%;
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0 2vw;
+  height: 55vh;
 }
 
-.subt {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 20px;
-    color: #3b3b3b;
-    line-height: 28px;
-    font-family: "Crimson";
-    margin-top: 15px;
-    margin-bottom: 20px;
-    padding-right: 40px;
+.timeline-section {
+  flex-basis: 30%;
+  padding-right: 2vw;
 }
 
-.abttt {
-  margin-left: -100%;
-  margin-top: 5%;
-  font-size: 39px;
-  font-family: "Josefin Sans";
-  
+.timeline {
+  position: relative;
+  border-left: 2px solid #6c7a89;
+  padding-left: 12px;
 }
 
-.txttt {
-  margin-left: -10%;
-  text-align: initial;
+.timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #6c7a89;
+  border-radius: 50%;
+  z-index: 1;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.timeline-item {
+  position: relative;
+  padding-bottom: 20px;
 }
 
-.back2home {
-  margin-left: 0%;
+.timeline-content {
+  position: relative;
+  padding-left: 10px;
+}
+.separator {
+  width: 2px; /* Width of the separator line */
+  background-color: #6c7a89; /* Color of the separator line */
+  height: 450px; /* Adjust the height as needed */
+  align-self: center; /* Center the line if the parent is a flex container */
+  margin-top: -100px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.separator2 {
+  width: 2px; /* Width of the separator line */
+  background-color: #6c7a89; /* Color of the separator line */
+  height: 250px; /* Adjust the height as needed */
+  align-self: center; /* Center the line if the parent is a flex container */
+  margin-top: -125px;
+  margin-left: -30px;
+  margin-right: 0;
 }
 
-.btn {
-  padding: 10px 60px;
-    height: 45px;
-    font-size: 16px;
+.profile-bio-section {
+  flex-basis: 40%;
+  text-align: right;
+  max-width: 400px; /* Adjust width as needed */
 }
 
-.mbv {
-  visibility: hidden;
+.biography {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-top: 10px;
+  text-align: justify;
+  border: 1px solid #6c7a89;
 }
-@media only screen and (max-width: 553px) {
-  .abt-image {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: -5%;
-    margin-right: -5%;
-  }
 
-  .back-btn {
-    margin-left: 0%;
+.contact-information {
+  color: #ffffff;
+}
 
-  }
+.contact-information h4 {
+  margin-bottom: 15px;
+  color: #6c7a89;
+  font-weight: 600;
+}
 
-  .abttt {
-    margin-left: -65%;
-    margin-top: 15%;
-  }
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  .mbv {
-    visibility: visible;
-  }
+.contact-icon {
+  margin-right: 10px;
+  color: #6c7a89;
+  width: 20px; /* Adjust the width as desired */
+  text-align: center;
+}
 
-  .cvvv {
-    visibility: hidden;
-  }
+.contact-text {
+  margin: 0;
+  font-size: 0.9rem; /* Adjust font-size as needed */
+}
 
-  .txttt {
-    margin-left: 0;
-  }
-
-  
-  .end {
-    margin-bottom: 20%;
-  }
-
-
-
+h2, h3, h4 {
+  color: #6c7a89;
 }
 </style>
