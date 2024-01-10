@@ -2,10 +2,25 @@
   <div class="home" id="index">
     <!-- Cover Image Container -->
     <div class="cover-container">
-      <!-- <img src="https://media.licdn.com/dms/image/D5616AQHiwSdHXe9xfQ/profile-displaybackgroundimage-shrink_350_1400/0/1695365316064?e=1710374400&v=beta&t=lCyaBIbzRrJff_WqBRAcUs3gQvWSJDJ_Y7qoS2jWXNg" alt="Cover" class="cover-image"> -->
       <!-- Profile Image Container -->
       <div class="profile-container">
+        <div class="tech-icons tech-icons-left">
+          <i class="fab fa-vuejs"></i> <!-- Vue.js -->
+          <i class="fab fa-js"></i> <!-- JavaScript -->
+          <i class="fab fa-sass"></i> <!-- SCSS -->
+          <i class="fab fa-angular"></i> <!-- Angular -->
+          <i class="fab fa-react"></i> <!-- React -->
+          <i class="fab fa-css3"></i> <!-- CSS3 -->
+        </div>
         <img src="https://i.postimg.cc/rsJjxhBL/diego.jpg" alt="Diego Allies" class="profile-image">
+        <div class="tech-icons tech-icons-right">
+          <i class="fas fa-database"></i> <!-- MySQL -->
+          <i class="fab fa-node-js"></i> <!-- Node.js -->
+          <i class="fab fa-node"></i> <!-- Placeholder for Express.js -->
+          <i class="fab fa-reacteurope"></i> <!-- Placeholder for Next.js (Creative use) -->
+          <i class="fas fa-cloud"></i>
+          <i class="fab fa-mdb"></i> <!-- MongoDB -->
+        </div>
       </div>
     </div>
     <!-- Content Container -->
@@ -27,6 +42,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -60,6 +76,36 @@ export default {
   object-fit: cover;
 }
 
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tech-icons-left {
+  left: calc(50% - 230px - 120px); /* Adjust based on the desired space between icons and image */
+  margin-top: 40px;
+}
+
+.tech-icons-right {
+  right: calc(50% - 250px - 120px); /* Adjust based on the desired space between icons and image */
+  margin-top: 40px;
+}
+
+.tech-icons i {
+  color: #6c7a89; /* Matching the theme color */
+  margin: 0 5px;
+  font-size: 24px; /* Icon size, adjust as needed */
+  transition: color 0.3s ease;
+}
+
+.tech-icons i:hover {
+  color: #ffffff;
+}
 .profile-container {
   position: absolute;
   left: 50%;
