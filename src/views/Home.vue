@@ -1,72 +1,136 @@
 <template>
   <div class="home" id="index">
-    <div class="container">
-  <div class="row">
-    <div class="col-sm w3-animate-right"> 
-      <!-- Left Column -->
-<div class="imageContainer">
-   <img src="https://i.postimg.cc/j2PbJmmr/1765-DB0-F-3-C1-B-4347-BD57-E8-BED21-AF08-E.jpg" alt="Diego Allies" class="home-image">
-</div>
+    <!-- Cover Image Container -->
+    <div class="cover-container">
+      <img src="https://media.licdn.com/dms/image/D5616AQHiwSdHXe9xfQ/profile-displaybackgroundimage-shrink_350_1400/0/1695365316064?e=1710374400&v=beta&t=lCyaBIbzRrJff_WqBRAcUs3gQvWSJDJ_Y7qoS2jWXNg" alt="Cover" class="cover-image">
+      <!-- Profile Image Container -->
+      <div class="profile-container">
+        <img src="https://i.postimg.cc/rsJjxhBL/diego.jpg" alt="Diego Allies" class="profile-image">
+      </div>
     </div>
-    <div class="col-sm w3-animate-left">
-       <!-- Right Column -->
-         <h1><HelloWorld msg="I am Diego Allies"/></h1> 
+    <!-- Content Container -->
+    <div class="contentContainer">
+      <h1 class="headline">I am Diego Allies</h1>
+      <p class="intro">I am a Junior Web developer able to build a Web presence from the ground up - from concept, navigation, layout and programming to UX and SEO...</p>
+      <div class="navigation">
+        <router-link to="/about" class="nav-btn">About</router-link>
+        <router-link to="/skills" class="nav-btn">Skills</router-link>
+        <router-link to="/projects" class="nav-btn">Projects</router-link>
+        <router-link to="/contact" class="nav-btn">Contact</router-link>
+      </div>
+      <div class="social-links">
+        <a href="mailto:diegoallies27@gmail.com" class="social-icon"><i class="fab fa-google"></i></a>
+        <a href="https://www.linkedin.com/in/diego-allies/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/diegoallies" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/2779354808" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
+    
   </div>
-</div>
-  </div>
-  <Footer />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import Footer from '@/components/Footer.vue'
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
     Footer
   }
-  
-}
+};
 </script>
 
 <style scoped>
-.imageContainer {
-  width: 85%;
-  height: 90%;
-  margin-left: -5%;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 3rem; /* space for the footer */
 }
 
-.home-image{
+.cover-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Set the height for your cover image */
+  background-color: #6c7a89; /* placeholder in case image fails to load */
+}
+
+.cover-image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-/* media querries */
+.profile-container {
+  position: absolute;
+  left: 50%;
+  bottom: -125px;
+  transform: translateX(-50%);
+  border: 5px solid #121212;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 5px;
+}
 
-@media only screen and (max-width: 553px) {
-  .home-image {
-    margin-top: 15%;
-    margin-bottom: 15%;
-    margin-left: 15%;
-    margin-right: -5%;
+.profile-image {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.headline {
+  margin: 100px 0 20px; /* Adjust space for profile image */
+  font-size: 2.5rem;
+}
+
+.intro, .navigation {
+  margin-bottom: 1rem;
+}
+
+.nav-btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background-color: #007bff; /* Bootstrap primary blue */
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: 2rem;
   }
-
-
-
-  .col-sm {
-    margin-left: 0%;
-    margin-right: 0%;
+  .profile-container {
+    bottom: -50px; /* Adjust profile position for smaller screens */
   }
-
-  .footrrr {
-    margin-top: 10%;
+  .profile-image {
+    width: 100px;
+    height: 100px;
   }
-
-
-
 }
 </style>

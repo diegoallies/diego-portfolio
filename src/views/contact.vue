@@ -1,83 +1,37 @@
 <template>
-
-   
-<div class="container">
-  <div class="row">
-
-    <div class="col-sm w3-animate-left">
-      <router-link to="/" class="btn btn-rabbit back-btn mnn mbv"><i class="fas fa-angle-left bbn">  </i>   <span class="back2home">Back to Home</span> </router-link>
-      <img src="https://i.postimg.cc/8zq0BbVB/contact.jpg" alt="me" class="abt-image">
-    </div>
-
-    <div class="col-sm w3-animate-right">
-       <div class="container">
-
-  <div class="row">
-    <div class="col">
-        <router-link to="/" class="btn btn-rabbit back-btn mnn ccvv"><i class="fas fa-angle-left bbn">  </i>   <span class="back2home">Back to Home</span> </router-link>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-     
-      <h1 class="conttt">Contact</h1>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-     <div class="forThat">
-  <p class="subt">Im based in Cape Town in RSA, drop me a line</p>
-
-
-     </div>
-    
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-     <form class="form_edit" action="https://formspree.io/f/xnqwyraz" method="POST"> 
-        <div class="form-group">
-            <input type="name" class="form-control bgg mnnm" id="exampleInputName" placeholder="Name" name="Name">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm w3-animate-left">
+        <router-link to="/" class="btn btn-rabbit back-btn"><i class="fas fa-angle-left"></i><span class="back2home">Back to Home</span></router-link>
+        <img src="https://i.postimg.cc/8zq0BbVB/contact.jpg" alt="me" class="contact-image">
+      </div>
+      <div class="col-sm w3-animate-right">
+        <div class="row">
+          <div class="col">
+            <h1 class="contact-title">Contact</h1>
+            <p class="contact-tagline">Based in Cape Town, RSA. Drop me a line here:</p>
+          </div>
         </div>
-
-        <div class="form-group">
-        <input type="email" class="form-control bgg mnnm" id="exampleInputEmail1" placeholder="Email" name="Email">
-        </div>
-
-        <div class="form-group">
-        <textarea class="form-control bgg mnnm" rows="5" placeholder="Message" name="Message"> </textarea> 
-        </div>
-        <a href="http://www.google.com">
-   <button type="submit" class="mnn btn btn-rabbit submit bgg bggn">Send Message</button>
-
-        </a>
-    </form>
+        <form class="contact-form" action="https://formspree.io/f/xnqwyraz" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Name" name="Name" v-model="name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="_replyto" v-model="email">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="5" placeholder="Message" name="Message" v-model="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-rabbit submit">Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
-
-</div>
-
-    </div>
-  
-  </div>
-</div>
-
-   
-
   <Footer />
-
 </template>
 
 <script>
-
-import * as mdb from 'mdb-ui-kit';
-import {input} from 'mdb-ui-kit';
 import Footer from '@/components/Footer.vue'
-
 
 export default {
   data() {
@@ -87,147 +41,87 @@ export default {
       message: '',
     }
   },
-
-
   components: {
     Footer
   }
-
 }
 </script>
 
 <style scoped>
-
-@import '~mdb-ui-kit/css/mdb.min.css';
-.abt-image {
-  width: 85%;
-  height: 90%;
-  margin-left: -1%;
+.container {
+  background-color: #121212; /* Dark theme background */
+  color: #ffffff;
 }
 
-.back-btn {
-  margin-left: -69%;
-  margin-top: 15%;
+.contact-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
 }
 
-.mbv {
-  visibility: hidden;
+.contact-title {
+  font-size: 2.5rem;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.mnn {
-    background-color: #fff;
-    color: #111;
-    font-style: italic;
-    border: 1px solid #111;
-    border-radius: 0px !important;
-    transition: all 0.4s ease-in-out;
-    margin-bottom: 20px;
-    font-family: "Crimson";
-    font-size: 13px;
+.contact-tagline {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-family: "Crimson", serif;
+  padding-right: 2rem;
+  margin-bottom: 2rem;
 }
 
-.mnnm {
-  background-color: #fff !important;
-    color: #111 !important;
-    border: 1px solid #111;
+.contact-form {
+  padding: 2rem;
 }
 
-.contact-text {
-    margin-left: -16%;
-    margin-top: 1%;
+.btn.btn-rabbit {
+  background-color: #fff;
+  color: #121212;
+  border: 1px solid #fff;
+  transition: all 0.4s ease-in-out;
+  font-family: "Crimson", serif;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
-.subt {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 20px;
-    color: #3b3b3b;
-    line-height: 28px;
-    font-family: "Crimson";
-    margin-top: 15px;
-    margin-bottom: 20px;
-    padding-right: 40px;
-    margin-left: -10.1%;
+.btn.btn-rabbit:hover {
+  background-color: #3b3b3b;
+  color: #fff;
 }
 
-.conttt {
-  margin-left: -94.7%;
-  margin-top: 5%;
-  font-size: 39px;
-  font-family: "Josefin Sans";
-  
+.form-control {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  margin-bottom: 1rem;
 }
 
-.btn {
-  padding: 10px 60px;
-    height: 45px;
-    font-size: 16px;
-}
-
-.bgg {
-  margin-bottom: 3.8%;
-  margin-left: -9.6%;
-}
-
-.bggn {
-  margin-left: -71.7%;
-}
-
-
-@media only screen and (max-width: 553px) {
-  .abt-image {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: -5%;
-    margin-right: -5%;
-    height: 80%;
+@media only screen and (max-width: 768px) {
+  /* Adjustments for mobile responsiveness */
+  .contact-title,
+  .contact-tagline {
+    text-align: center;
   }
 
-  .back-btn {
-    margin-left: 0%;
-
+  .contact-form {
+    padding: 1rem;
   }
 
-  .btn {
-    margin-left:60%;
+  .btn.btn-rabbit {
+    width: 100%;
+    margin-top: 0;
   }
 
-  .mbv {
-    visibility: visible;
+  .contact-image {
+    margin: 1rem auto;
   }
-
-  .ccvv {
-    visibility: hidden;
-  }
-
-  .conttt {
-    margin-left: -59%;
-    margin-top: -15%;
-  }
-
-  .subt {
-    margin-left: 0%;
-    text-align: start;
-  }
-
-  .forThat {
-    margin-left: 0%;
-  }
-
-  form {
-    margin-left: 0;
-  }
-
-  .mnnm {
-    margin-left: 0;
-  }
-
-  .mnn {
-    margin-left: -1%;
-    margin-bottom: 20%;
-  }
-
-
-
 }
 </style>

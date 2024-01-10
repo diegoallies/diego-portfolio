@@ -1,53 +1,27 @@
 <template>
-  <div class="container entireFooter">
-  <div class="row">
-    <div class="col-sm footSide">
-
-<!-- footer side -->
-
+  <footer class="footer">
+    <div class="footer-text">
+      © 2024 Diego Allies Productions. All rights reserved.
     </div>
-    <div class="col-sm">
-      
-<!-- Footer -->
-<footer class="footrrr">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2022 Copyright:
-    <a href="https://diegoallies-portfolio-final.netlify.app//">Diego Allies Productions</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
-
-
-    </div>
-    <div class="col-sm footSide">
-  <!-- footer side -->
-    </div>
-  </div>
-</div>
+  </footer>
 </template>
 
 <script>
 export default {
-
-}
+  // Your script content goes here if you need any
+};
 </script>
 
-<style>
-.footrrr {
-  color: #3b3b3b;
-  margin-bottom: -100%;
+<style scoped>
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background: #6c7a89; /* Matched the cover image background */
+  color: #fff;
 }
 
-.footSide {
-  border-top-style: double;
-  margin-bottom: -1%;
-  margin-top: 2.5%;
-  border-color: rgb(32, 50, 83);
+.footer-text {
+  font-size: 0.875rem;
+  opacity: 0.8;
 }
-
-.entireFooter {
-  margin-top: -4.5%;
-}
-
 </style>

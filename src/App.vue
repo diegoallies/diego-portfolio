@@ -1,106 +1,79 @@
 <template>
-
-  <transition name="fade" mode="out-in">
-
-    <router-view/>
-
-  </transition>
-
+  <div id="app" class="app-container">
+    <!-- Content that takes up the main part of the screen -->
+    <div class="content-container">
+      <transition name="fade" mode="out-in">
+        <router-view/>
+      </transition>
+    </div>
+    <!-- Sticky Footer -->
+    <Footer />
+  </div>
 </template>
 
 <script>
-
-import * as mdb from 'mdb-ui-kit';
-import {input} from 'mdb-ui-kit';
+import Footer from './components/Footer.vue';
 
 export default {
-  
-}
+  components: {
+    Footer
+  }
+};
 </script>
 
 <style>
-
-/* footer style */
-
-/* .footrrr {
-  color: #3b3b3b;
-  margin-bottom: -100%;
-}
-
-.footSide {
-  border-top-style: double;
-  margin-bottom: -1%;
-  margin-top: 2.5%;
-  border-color: rgb(32, 50, 83);
-}
-
-.entireFooter {
-  margin-top: -4.5%;
-} */
-
-/* footer style */
-
-
 @import '~mdb-ui-kit/css/mdb.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  width: 100vw;
+/* Applying styles to the root element and the main #app */
+html {
+  height: 100%;
 }
 
-#nav {
-  padding: 30px;
+body, #app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* Light text color */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Improved font */
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* Ensures that content container can expand to push the footer */
+.content-container {
+  flex: 1;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+/* Animated transitions */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
 }
-/* animation */
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Re-usable animations */
 .w3-animate-right {
-
-  position:relative;
-  animation:animateright 1.2s
-  }
-  
-  @keyframes animateright {
-    from{right:-500px;opacity:0.6} 
-    to{right:0;opacity:1}}
-
-/* gap */
-
+  animation: animateright 1.2s;
+}
+@keyframes animateright {
+  from { right: -500px; opacity: 0.6; } 
+  to { right: 0; opacity: 1; }
+}
 .w3-animate-left {
-  position:relative;
-  animation:animateleft 1.2s
-  }
-  
-  @keyframes animateleft {
-    from{left:-500px;opacity:0.6}
-    to{left:0;opacity:1}
-    }
-
-@media only screen and (max-width: 553px) {
-
-  .col-sm {
-    margin-left: 0%;
-    margin-right: 0%;
-  }
-
-  .footrrr {
-    margin-top: 10%;
-  }
-
-
-
+  animation: animateleft 1.2s;
+}
+@keyframes animateleft {
+  from { left: -500px; opacity: 0.6; } 
+  to { left: 0; opacity: 1; }
 }
 
-
+/* Media queries for responsive adjustments */
+@media only screen and (max-width: 553px) {
+  .w3-animate-left, .w3-animate-right {
+    animation: none;
+  }
+}
 </style>
