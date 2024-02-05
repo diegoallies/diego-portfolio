@@ -169,11 +169,16 @@ export default {
   color: #6c7a89;
 }
 
-@media (min-width: 768px) { /* Adjustments for tablets and up */
+@media (min-width: 800px) { /* Adjustments for tablets and up */
   .main-content {
     flex-direction: row; /* Back to row for wider screens */
     align-items: flex-start;
     padding: 0 2vw;
+  }
+
+  .contact-information {
+    display: none !important;
+    visibility: hidden;
   }
 
   .timeline-section, .profile-bio-section, .contact-information {
