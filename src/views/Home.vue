@@ -109,16 +109,11 @@ export default {
     }
 
     .tech-icons-left, .tech-icons-right {
-        transform: scale(0.8); /* Optional: Scales down the icon blocks slightly */
+        transform: scale(0.6); /* Optional: Scales down the icon blocks slightly */
+        margin-top: 20px;
     }
     
-    .tech-icons-left {
-        left: 0 /* Adjusting for less space on smaller screens */
-    }
 
-    .tech-icons-right {
-        right: 0 /* Adjusting for less space on smaller screens */
-    }
 
     .content-container {
   margin-top: 30%;
@@ -130,8 +125,8 @@ export default {
     }
 }
 
-.tech-icons-left { left: calc(50% - 25vh); }
-.tech-icons-right { right: calc(50% - 25vh); }
+.tech-icons-left { left: calc(60% - 27vh); }
+.tech-icons-right { right: calc(50% - 27vh); }
 
 .tech-icons i {
   color: #6c7a89;
