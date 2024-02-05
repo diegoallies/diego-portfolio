@@ -24,13 +24,12 @@
       </div>
     </div>
     <!-- Content Container -->
-    <div class="contentContainer">
+    <div class="content-container">
       <h1 class="headline">Diego Allies - Software Engineer</h1>
       <p class="intro">Crafting robust solutions with a blend of modern technologies and a passion for continuous learning in software engineering.</p>
       <div class="navigation">
         <router-link to="/about" class="btn btn-custom">About</router-link>
         <router-link to="/skills" class="btn btn-custom">Skills</router-link>
-        <!-- <router-link to="/projects" class="btn btn-custom">Projects</router-link> -->
         <router-link to="/contact" class="btn btn-custom">Contact</router-link>
       </div>
       <div class="social-links">
@@ -42,7 +41,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -62,6 +60,9 @@ export default {
   margin: 0;
 }
 
+.content-container {
+  margin-top: 10%;
+}
 .cover-container {
   position: relative;
   width: 100%;
@@ -70,12 +71,24 @@ export default {
   margin-bottom: 60px;
 }
 
-.cover-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.profile-container {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+  border: 5px solid #121212;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 5px;
+  transition: all 0.3s ease;
 }
 
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .tech-icons {
   display: flex;
@@ -86,67 +99,66 @@ export default {
   transform: translateY(-50%);
 }
 
-.tech-icons-left {
-  left: calc(50% - 230px - 120px); /* Adjust based on the desired space between icons and image */
+.tech-icons-left, .tech-icons-right {
   margin-top: 40px;
+}
+@media (max-width: 600px) {
+    .tech-icons i {
+        font-size: 16px; /* Adjusts the font size for smaller screens */
+        margin: 0 2px; /* Reduces the gap between icons */
+    }
+
+    .tech-icons-left, .tech-icons-right {
+        transform: scale(0.8); /* Optional: Scales down the icon blocks slightly */
+    }
+    
+    .tech-icons-left {
+        left: 0 /* Adjusting for less space on smaller screens */
+    }
+
+    .tech-icons-right {
+        right: 0 /* Adjusting for less space on smaller screens */
+    }
+
+    .content-container {
+  margin-top: 30%;
+
+    } 
+
+    p.intro {
+      padding: 2px;
+    }
 }
 
-.tech-icons-right {
-  right: calc(50% - 250px - 120px); /* Adjust based on the desired space between icons and image */
-  margin-top: 40px;
-}
+.tech-icons-left { left: calc(50% - 25vh); }
+.tech-icons-right { right: calc(50% - 25vh); }
 
 .tech-icons i {
-  color: #6c7a89; /* Matching the theme color */
+  color: #6c7a89;
   margin: 0 5px;
-  font-size: 24px; /* Icon size, adjust as needed */
+  font-size: 24px;
   transition: color 0.3s ease;
 }
 
 .tech-icons i:hover {
   color: #ffffff;
 }
-.profile-container {
-  position: absolute;
-  left: 50%;
-  bottom: -125px;
-  transform: translateX(-50%);
-  border: 5px solid #121212;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 5px;
-}
 
-.profile-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+.headline { font-size: 2rem; }
+.intro { font-size: 1.25rem; margin: 20px 0; }
 
-.headline {
-  margin-top: 90px;
-  font-size: 2.5rem;
-}
+.navigation, .social-links { margin-bottom: 20px; }
 
-.intro {
-  font-size: 1.25rem;
-  margin: 20px 0;
-}
-
-.navigation {
-  margin-bottom: 20px;
-}
-
-.btn.btn-custom {
+.btn-custom {
   background-color: #6c7a89;
   color: #121212;
   margin: 10px;
   padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
-.social-links {
-  margin-bottom: 50px;
+.btn-custom:hover {
+  background-color: #7d8a97;
 }
 
 .social-icon {
@@ -155,20 +167,16 @@ export default {
   margin: 0 10px;
 }
 
-.social-icon:hover {
-  color: #bbbbbb;
-}
+.social-icon:hover { color: #bbbbbb; }
 
-@media (max-width: 600px) {
-  .headline {
-    font-size: 2rem;
-  }
-  .profile-container {
-    bottom: -50px;
-  }
+@media (min-width: 601px) {
+  .profile-container { bottom: -125px; }
   .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 250px; /* Adjusted for non-mobile */
+    height: 250px; /* Adjusted for non-mobile */
   }
+  .tech-icons-left { left: calc(50% - 230px - 120px); }
+  .tech-icons-right { right: calc(50% - 250px - 120px); }
+  .headline { font-size: 2.5rem; }
 }
 </style>
